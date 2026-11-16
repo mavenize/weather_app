@@ -355,8 +355,8 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 10000,
       "subtasks": [
@@ -385,12 +385,12 @@
     {
       "id": "T-11",
       "text": "T-11 · Actions and start-up",
-      "description": "Goal: loadLocation(place) drives loading, fetch, process, ready or error, and saves the last place. index.js loads the saved place or Berlin on start.\nFiles: src/state/actions.js, src/index.js",
+      "description": "Goal: loadLocation(place) drives loading, fetch, process, ready or error, and saves the last place. index.js loads the saved place or Berlin on start.\nFiles: src/state/actions.js, src/index.js\nChanged:\nsrc/state/actions.js\nsrc/index.js\ndocs/diagrams/module-map.excalidraw\ndocs/diagrams/module-map.svg",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 11000,
@@ -398,27 +398,27 @@
         {
           "id": "T-11-d1",
           "text": "DoD: Page load logs a ready state with Berlin weather",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-11-d2",
           "text": "DoD: Status goes loading to ready, or loading to error with the previous weather kept",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-11-d3",
           "text": "DoD: Last place saved and restored after reload",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-11-d4",
           "text": "DoD: Only the newest of two overlapping loads is applied",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-11-d5",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
