@@ -1,7 +1,7 @@
 import "./header.css";
-import { COPY } from "../data/copy.js";
 import { createEl } from "../utils/dom.js";
 import { getState, subscribe } from "../state/store.js";
+import { createSearch } from "../components/search.js";
 
 // The label of the place being shown. Before the first weather arrives there
 // is no weather.place yet, so it falls back to the place being loaded.
@@ -10,8 +10,9 @@ function placeText({ weather, place }) {
   return [place?.name, place?.country].filter(Boolean).join(", ");
 }
 
-// Place name, local date and the search button. The design's bell and menu
-// buttons are replaced by the one search button (plan.md, Decisions).
+// Place name, local date and search. The design's bell and menu buttons are
+// replaced by the one search button, which createSearch() owns along with
+// the panel it opens (plan.md, Decisions).
 export function createHeader() {
   const header = createEl("header", { className: "header" });
 
@@ -20,18 +21,7 @@ export function createHeader() {
   const date = createEl("p", { className: "header__date" });
   text.append(place, date);
 
-  const searchButton = createEl("button", {
-    className: "header__button",
-    attrs: { type: "button", "aria-label": COPY.header.searchButton },
-  });
-  searchButton.append(
-    createEl("span", {
-      className: "header__icon header__icon--search",
-      attrs: { "aria-hidden": "true" },
-    }),
-  );
-
-  header.append(text, searchButton);
+  header.append(text, createSearch());
 
   function render(state) {
     place.textContent = placeText(state);

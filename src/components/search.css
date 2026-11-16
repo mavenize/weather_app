@@ -1,0 +1,127 @@
+/* The design has no search screen. The panel drops over the top of the app
+   in the card's colours, and suggestions use the forecast rows' look. */
+
+.search__button {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: var(--control-size);
+  height: var(--control-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-card-control);
+  color: var(--color-on-card);
+}
+
+/* Interface icons are single-colour SVGs used as masks, so they take the
+   button's text colour from the tokens. */
+.search__icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-color: currentColor;
+  mask: center / contain no-repeat;
+}
+
+.search__icon--search {
+  mask-image: url("../assets/ui/search.svg");
+}
+
+.search__icon--close {
+  mask-image: url("../assets/ui/close.svg");
+}
+
+/* Positioned against .app (base.css), so it covers the top of the page. */
+.search__panel {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--app-padding-top) var(--space-5) var(--space-6);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  background: linear-gradient(
+    165deg,
+    var(--color-card-start),
+    var(--color-card-end)
+  );
+  box-shadow: var(--shadow-overlay);
+  color: var(--color-on-card);
+}
+
+.search__form {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* Visually hidden, still read by screen readers. */
+.search__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  height: var(--control-size);
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-card-control);
+  font-size: var(--font-size-lg);
+}
+
+.search__input::placeholder {
+  color: var(--color-on-card-soft);
+}
+
+.search__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-height: 60vh;
+  margin: 0;
+  padding: var(--space-2);
+  overflow-y: auto;
+  list-style: none;
+  border-radius: var(--radius-md);
+  background: var(--color-sheet);
+  color: var(--color-text);
+}
+
+.search__option {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.search__option:hover,
+.search__option[aria-selected="true"] {
+  background: var(--color-sheet-row);
+}
+
+.search__option-label {
+  font-size: var(--font-size-md);
+}
+
+.search__option-region {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.search__message {
+  padding-inline: var(--space-2);
+  font-size: var(--font-size-md);
+  color: var(--color-on-card-soft);
+}
+
+.search__message:empty {
+  display: none;
+}

@@ -8,6 +8,12 @@
   margin: 0;
 }
 
+/* Elements hidden with the hidden attribute stay hidden even when a class
+   gives them a display value. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;

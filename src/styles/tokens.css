@@ -33,6 +33,11 @@
   --color-sheet-row: #f6f8fa;
   --color-sheet-handle: #cacaca;
   --color-text: #111111;
+  --color-text-muted: #5b6573; /* search suggestion region, 6:1 on white */
+
+  /* Search panel shadow over the page */
+  --shadow-overlay: 0 1rem 2rem
+    color-mix(in srgb, var(--color-page) 45%, transparent);
 
   /* Typography */
   --font-family: "Archivo Variable", system-ui, sans-serif;
@@ -69,4 +74,7 @@
 
   /* Layout */
   --app-max-width: 430px;
+  --app-padding-top: 2.75rem; /* 44px: header and search panel */
+  --control-size: 2.875rem; /* 46px: header buttons, search input */
+  --icon-size: 1.25rem; /* 20px: interface icons */
 }

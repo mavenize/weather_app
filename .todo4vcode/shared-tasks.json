@@ -430,15 +430,15 @@
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 12000,
       "subtasks": [
         {
           "id": "T-12-d1",
           "text": "DoD: Matches the design header, with one search button",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-12-d2",
@@ -460,12 +460,12 @@
     {
       "id": "T-13",
       "text": "T-13 · Search component",
-      "description": "Goal: Search bar opened from the header with debounced city suggestions; clicking one loads it.\nFiles: src/components/search.js, src/components/search.css",
+      "description": "Goal: Search bar opened from the header with debounced city suggestions; clicking one loads it.\nFiles: src/components/search.js, src/components/search.css\nChanged:\nsrc/components/search.js\nsrc/components/search.css\nsrc/assets/ui/close.svg\nsrc/sections/header.js\nsrc/sections/header.css\nsrc/styles/tokens.css\nsrc/styles/base.css\ndocs/diagrams/module-map.excalidraw\ndocs/diagrams/module-map.svg",
       "tags": [
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 13000,
@@ -473,32 +473,32 @@
         {
           "id": "T-13-d1",
           "text": "DoD: Header button opens the search bar",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-13-d2",
           "text": "DoD: Typing Berl shows suggestions, with one request per pause in typing",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-13-d3",
           "text": "DoD: Clicking a suggestion loads it and closes the bar",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-13-d4",
           "text": "DoD: Enter picks the first suggestion, Escape closes and returns focus",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-13-d5",
           "text": "DoD: No results message shows",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-13-d6",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
