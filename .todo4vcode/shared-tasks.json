@@ -550,15 +550,15 @@
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 15000,
       "subtasks": [
         {
           "id": "T-15-d1",
           "text": "DoD: Matches the design's top card",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-15-d2",
@@ -585,7 +585,7 @@
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "In Progress",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 16000,
@@ -593,7 +593,7 @@
         {
           "id": "T-16-d1",
           "text": "DoD: Six slots: previous hour, Now and the next four, in the location's time",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-16-d2",
@@ -603,7 +603,7 @@
         {
           "id": "T-16-d3",
           "text": "DoD: Correct after 20:00, when the strip crosses midnight",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-16-d4",
@@ -845,12 +845,12 @@
     {
       "id": "T-23",
       "text": "T-23 · Production build without eval source maps",
-      "description": "Goal: webpack.config.js sets devtool: eval-source-map for every mode, so the production bundle wraps modules in eval() with inline source maps (found in T-03). Use eval-source-map only in development and no devtool (or a separate source-map file) in production. Do before T-22.\nFiles: webpack.config.js",
+      "description": "Goal: webpack.config.js sets devtool: eval-source-map for every mode, so the production bundle wraps modules in eval() with inline source maps (found in T-03). Use eval-source-map only in development and no devtool (or a separate source-map file) in production. Do before T-22.\nFiles: webpack.config.js\nChanged:\nwebpack.config.js",
       "tags": [
         "phase-3"
       ],
       "priority": "Should",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794832740387,
       "order": 23000,
@@ -858,22 +858,22 @@
         {
           "id": "T-23-d1",
           "text": "DoD: npm run build output contains no eval( and no inline source maps",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-23-d2",
           "text": "DoD: npm run dev keeps fast source maps",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-23-d3",
           "text": "DoD: Done before T-22",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-23-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     }
