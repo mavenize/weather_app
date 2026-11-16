@@ -19,6 +19,7 @@ export const COPY = {
   },
 
   current: {
+    label: "Current conditions", // accessible name of the section
     high: "High :", // design
     low: "Low :", // design
     humidity: "Humidity", // design

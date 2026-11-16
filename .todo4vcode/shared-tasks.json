@@ -510,8 +510,8 @@
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 14000,
       "subtasks": [
@@ -545,12 +545,12 @@
     {
       "id": "T-15",
       "text": "T-15 · Current conditions section",
-      "description": "Goal: Top card: icon, temperature, condition, High/Low pills and Humidity/Wind/Rain panel.\nFiles: src/sections/current.js, src/sections/current.css, src/index.js",
+      "description": "Goal: Top card: icon, temperature, condition, High/Low pills and Humidity/Wind/Rain panel.\nFiles: src/sections/current.js, src/sections/current.css, src/index.js\nChanged:\nsrc/sections/current.js\nsrc/sections/current.css\nsrc/assets/ui/arrow-up-right.svg\nsrc/assets/ui/arrow-down-right.svg\nsrc/index.js\nsrc/data/copy.js\nsrc/styles/tokens.css",
       "tags": [
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 15000,
@@ -563,17 +563,17 @@
         {
           "id": "T-15-d2",
           "text": "DoD: Values in °C, km/h and % from state",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-15-d3",
           "text": "DoD: Copy is verbatim",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-15-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },

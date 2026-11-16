@@ -1,0 +1,101 @@
+/* Sizes from design_files/UI_screens.png, divided by 1.39 (see tokens.css). */
+.current {
+  padding: var(--space-8) var(--space-5) var(--space-5);
+  color: var(--color-on-card);
+}
+
+/* Icon and reading, centred as one group. Below 390px the icon and the
+   temperature shrink with the screen, so a wide reading such as "-12°"
+   still fits beside the icon at 320px. Wraps only as a last resort. */
+.current__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.current__summary .weather-icon--lg {
+  --weather-icon-size: min(7.5rem, 31vw);
+}
+
+.current__temp {
+  font-size: min(var(--font-size-display), 20.5vw);
+  font-weight: var(--font-weight-display);
+  font-stretch: var(--font-stretch-display);
+  line-height: 1;
+}
+
+.current__condition {
+  margin-top: var(--space-1);
+  font-size: min(var(--font-size-xl), 5.3vw);
+}
+
+.current__pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.current__pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 3.25rem; /* 52px */
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-card-pill);
+  font-size: min(var(--font-size-lg), 4.4vw);
+  white-space: nowrap;
+}
+
+/* Arrow icons are single-colour SVG masks (see search.css). */
+.current__arrow {
+  flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: currentColor;
+  mask: center / contain no-repeat;
+}
+
+.current__arrow--up {
+  color: var(--color-high);
+  mask-image: url("../assets/ui/arrow-up-right.svg");
+}
+
+.current__arrow--down {
+  color: var(--color-low);
+  mask-image: url("../assets/ui/arrow-down-right.svg");
+}
+
+/* Columns grow by the same amount from their content width, which spaces
+   them like the design (the middle column is the widest). */
+.current__stats {
+  display: flex;
+  margin-top: var(--space-2);
+  padding: var(--space-4) 0;
+  border-radius: var(--radius-md);
+  background: var(--color-card-panel);
+}
+
+.current__stat {
+  flex: 1 1 auto;
+  padding: var(--space-1) var(--space-2);
+  text-align: center;
+}
+
+.current__stat + .current__stat {
+  border-left: 1px solid var(--color-card-divider);
+}
+
+.current__stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-card-muted);
+}
+
+.current__stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}

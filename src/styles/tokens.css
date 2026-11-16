@@ -15,6 +15,9 @@
   --color-card-control: #1b4985;
   --color-card-pill: #0d3062;
   --color-card-panel: #052251;
+  --color-card-divider: #455b85; /* lines between Humidity, Wind, Rain */
+  --color-high: #b8efc8; /* High pill arrow */
+  --color-low: #f0768b; /* Low pill arrow */
   --color-on-card: #ffffff;
   --color-on-card-soft: color-mix(
     in srgb,

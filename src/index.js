@@ -5,10 +5,11 @@ import { createEl } from "./utils/dom.js";
 import { subscribe } from "./state/store.js";
 import { getSavedPlace, loadLocation } from "./state/actions.js";
 import { createHeader } from "./sections/header.js";
+import { createCurrent } from "./sections/current.js";
 
 // The header and current conditions share the dark card (styles/base.css).
 const card = createEl("div", { className: "card" });
-card.append(createHeader());
+card.append(createHeader(), createCurrent());
 
 document.getElementById("content").append(card);
 
