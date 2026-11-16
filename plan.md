@@ -252,3 +252,31 @@ Build as described in Decisions until the client answers.
 10. Keyboard only: open search, pick a suggestion, expand the sheet.
 11. Lighthouse mobile: Accessibility at least 95, Best Practices at least 90.
 12. Attribution links are visible and work.
+
+### Results (T-21, 2026-11-16)
+
+Run against the production build (`npm run build`, served locally) with a Playwright script, one browser at a time, at 390px unless stated.
+
+| Check                | Chrome 157 | WebKit 27.2 (Safari engine) | Firefox 157 |
+| -------------------- | ---------- | --------------------------- | ----------- |
+| 1. Fresh visit       | Pass       | Pass                        | Pass        |
+| 2. Search "Lond"     | Pass       | Pass                        | Pass        |
+| 3. Reload restores   | Pass       | Pass                        | Pass        |
+| 4. "xqzv" no results | Pass       | Pass                        | Pass        |
+| 5. Offline           | Pass       | Pass                        | Pass        |
+| 6. Slow network      | Pass       | Pass                        | Pass        |
+| 7. 7-day sheet       | Pass       | Pass                        | Pass        |
+| 8. Tokyo time        | Pass       | Pass                        | Pass        |
+| 9. Widths            | Pass       | Pass                        | Pass        |
+| 10. Keyboard only    | Pass       | Pass                        | Pass        |
+| 11. Lighthouse       | 100 / 100  | n/a (Chrome only)           | n/a         |
+| 12. Attribution      | Pass       | Pass                        | Pass        |
+
+Notes:
+
+- Typing "Lond" sent one suggestion request in every browser. No JavaScript errors in any browser.
+- Slow network: Chrome used DevTools throttling (2 s latency, about 400 kbit/s); the loader stayed up for the whole 2.1 s load. WebKit and Firefox have no throttling switch, so each weather response was held for 3 s instead.
+- Widths 320, 375, 390 and 430px had no horizontal scroll. At 1280px the column was centred (416px on each side).
+- Lighthouse mobile ran in T-20: Accessibility 100, Best Practices 100.
+- WebKit and Firefox are Playwright's builds of those engines, not the Safari and Firefox apps. Before launch, open the live URL once in Safari on an iPhone and in desktop Firefox.
+- WebKit only moves keyboard focus between buttons with Tab when the system setting asks for it, so in WebKit check 10 focused the controls directly and then used Enter and the arrow keys.

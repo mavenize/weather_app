@@ -740,8 +740,8 @@
         "phase-3"
       ],
       "priority": "Should",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 20000,
       "subtasks": [
@@ -775,12 +775,12 @@
     {
       "id": "T-21",
       "text": "T-21 · Cross-device and network check",
-      "description": "Goal: Run the whole-project checks from plan.md Verification across browsers, widths and network conditions.\nFiles: plan.md (results), fixes as new tasks",
+      "description": "Goal: Run the whole-project checks from plan.md Verification across browsers, widths and network conditions.\nFiles: plan.md (results), fixes as new tasks\nChanged:\nplan.md",
       "tags": [
         "phase-3"
       ],
       "priority": "Should",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 21000,
@@ -788,22 +788,22 @@
         {
           "id": "T-21-d1",
           "text": "DoD: Whole-project checks pass in Chrome, Safari and Firefox",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-21-d2",
           "text": "DoD: Widths 320, 375, 390 and 430px",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-21-d3",
           "text": "DoD: Slow 3G and offline behave as described",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-21-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
