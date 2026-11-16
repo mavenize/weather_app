@@ -1,0 +1,18 @@
+/* Sizes from design_files/UI_screens.png, divided by 1.39 (see tokens.css).
+   Width and height are fixed, so the space is reserved before the PNG loads. */
+.weather-icon {
+  --weather-icon-size: 2rem; /* 32px: forecast rows */
+
+  flex-shrink: 0;
+  width: var(--weather-icon-size);
+  height: var(--weather-icon-size);
+  object-fit: contain;
+}
+
+.weather-icon--sm {
+  --weather-icon-size: 1.75rem; /* 28px: hourly strip */
+}
+
+.weather-icon--lg {
+  --weather-icon-size: 7.5rem; /* 120px: current conditions */
+}
