@@ -695,12 +695,12 @@
     {
       "id": "T-19",
       "text": "T-19 · Weather themes",
-      "description": "Goal: data-theme follows the current conditions; token palettes for each theme group.\nFiles: src/index.js, src/styles/tokens.css",
+      "description": "Goal: data-theme follows the current conditions; token palettes for each theme group.\nFiles: src/index.js, src/styles/tokens.css\nChanged:\nsrc/index.js\nsrc/styles/tokens.css\nsrc/sections/hourly.css\nplan.md",
       "tags": [
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 19000,
@@ -708,27 +708,27 @@
         {
           "id": "T-19-d1",
           "text": "DoD: data-theme follows the current conditions",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-19-d2",
           "text": "DoD: Palettes for clear-day, clear-night, cloudy, rain, thunder, snow and fog",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-19-d3",
           "text": "DoD: Text contrast at least 4.5:1 in every theme",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-19-d4",
           "text": "DoD: Colours only in tokens.css",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-19-d5",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
@@ -885,8 +885,8 @@
         "phase-3"
       ],
       "priority": "Should",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794839392567,
       "order": 24000,
       "subtasks": [

@@ -21,15 +21,18 @@
   --color-on-card: #ffffff;
   --color-on-card-soft: color-mix(
     in srgb,
-    var(--color-on-card) 88%,
+    var(--color-on-card) 90%,
     transparent
   ); /* header date */
   --color-on-card-muted: #7e9bc6;
 
-  /* Hourly strip */
-  --color-hour: #548ed7;
+  /* Hourly strip. The design's slot blue (#548ed7) gives white text only
+     3.4:1, so the slots are a deeper blue (4.7:1). The light "Now" slot
+     keeps the design's colour with the card's navy text (7.7:1). */
+  --color-hour: #2f74cb;
   --color-hour-now: #8ab8f3;
   --color-on-hour: #ffffff;
+  --color-on-hour-now: var(--color-card-end);
   --color-hour-now-border: color-mix(
     in srgb,
     var(--color-on-hour) 35%,
@@ -96,6 +99,104 @@
   --app-corner: 0px;
   --app-corner-inner: max(0px, calc(var(--app-corner) - var(--app-rim)));
   --app-frame-gap: 0px; /* space above and below the frame */
+}
+
+/*
+ * Weather themes. index.js sets data-theme on <html> from the current
+ * conditions (data/themes.js). Each theme swaps the page, card and hourly
+ * colours; the white forecast sheet is the same in every theme. The palettes
+ * are derived from the design's blue (plan.md, Open questions 1), and every
+ * text colour reaches at least 4.5:1 on its background.
+ * clear-day is the design itself, so it uses the :root values above.
+ */
+:root[data-theme="clear-night"] {
+  --color-page: #04081a;
+  --color-app: #3b4f86;
+  --color-card-start: #2c3d78;
+  --color-card-end: #070d2b;
+  --color-card-control: #2a3b73;
+  --color-card-pill: #131d48;
+  --color-card-panel: #0a1236;
+  --color-card-divider: #44528a;
+  --color-on-card-muted: #9aa7d6;
+  --color-hour: #34477f;
+  --color-hour-now: #8c9be0;
+  --color-on-hour-now: var(--color-card-end);
+}
+
+:root[data-theme="cloudy"] {
+  --color-page: #0e141b;
+  --color-app: #8d9db0;
+  --color-card-start: #55667b;
+  --color-card-end: #1b2633;
+  --color-card-control: #46566a;
+  --color-card-pill: #253141;
+  --color-card-panel: #18212c;
+  --color-card-divider: #586679;
+  --color-on-card-muted: #a7b4c3;
+  --color-hour: #63758b;
+  --color-hour-now: #b9c6d4;
+  --color-on-hour-now: var(--color-card-end);
+}
+
+:root[data-theme="rain"] {
+  --color-page: #061420;
+  --color-app: #6489aa;
+  --color-card-start: #375c7e;
+  --color-card-end: #0a2033;
+  --color-card-control: #2d4e6d;
+  --color-card-pill: #123049;
+  --color-card-panel: #0a2135;
+  --color-card-divider: #48647e;
+  --color-on-card-muted: #93adc5;
+  --color-hour: #4b7395;
+  --color-hour-now: #9cbcd8;
+  --color-on-hour-now: var(--color-card-end);
+}
+
+:root[data-theme="thunder"] {
+  --color-page: #0c0717;
+  --color-app: #6f6aa3;
+  --color-card-start: #4a3d82;
+  --color-card-end: #130b2b;
+  --color-card-control: #3c3372;
+  --color-card-pill: #211a46;
+  --color-card-panel: #160e33;
+  --color-card-divider: #574d8a;
+  --color-on-card-muted: #aaa1d2;
+  --color-hour: #5b5494;
+  --color-hour-now: #b2abe0;
+  --color-on-hour-now: var(--color-card-end);
+}
+
+:root[data-theme="snow"] {
+  --color-page: #0b1a2c;
+  --color-app: #9ec4e8;
+  --color-card-start: #3f7095;
+  --color-card-end: #17324f;
+  --color-card-control: #3f6d9b;
+  --color-card-pill: #1d3d60;
+  --color-card-panel: #142f4c;
+  --color-card-divider: #56779a;
+  --color-on-card-muted: #a9c3dd;
+  --color-hour: #377ba3;
+  --color-hour-now: #c4dcf3;
+  --color-on-hour-now: var(--color-card-end);
+}
+
+:root[data-theme="fog"] {
+  --color-page: #13171c;
+  --color-app: #a4acb6;
+  --color-card-start: #636d7a;
+  --color-card-end: #262c34;
+  --color-card-control: #545d69;
+  --color-card-pill: #303740;
+  --color-card-panel: #22282f;
+  --color-card-divider: #636b76;
+  --color-on-card-muted: #b3bbc5;
+  --color-hour: #6c7682;
+  --color-hour-now: #c8cfd7;
+  --color-on-hour-now: var(--color-card-end);
 }
 
 @media (min-width: 768px) {

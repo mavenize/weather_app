@@ -28,6 +28,7 @@
 
 .hourly__slot--now {
   height: 6.75rem; /* 108px */
+  color: var(--color-on-hour-now);
   border: 1px solid var(--color-hour-now-border);
   background: var(--color-hour-now);
   box-shadow: var(--shadow-hour-now);
