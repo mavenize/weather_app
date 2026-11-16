@@ -780,8 +780,8 @@
         "phase-3"
       ],
       "priority": "Should",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 21000,
       "subtasks": [
@@ -810,12 +810,12 @@
     {
       "id": "T-22",
       "text": "T-22 · README and GitHub Pages deploy",
-      "description": "Goal: README with credits; asset paths that work under /weather_app/; deploy to gh-pages.\nFiles: README.md, webpack.config.js",
+      "description": "Goal: README with credits; asset paths that work under /weather_app/; deploy to gh-pages.\nFiles: README.md, webpack.config.js\nChanged:\nREADME.md\n(webpack.config.js needed no change: publicPath auto already makes asset paths work under /weather_app/)",
       "tags": [
         "phase-3"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "In Progress",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 22000,
@@ -823,12 +823,12 @@
         {
           "id": "T-22-d1",
           "text": "DoD: README covers what the app is, how to run it, and credits",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-22-d2",
           "text": "DoD: Asset paths work under /weather_app/",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-22-d3",
@@ -838,7 +838,7 @@
         {
           "id": "T-22-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
