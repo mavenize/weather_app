@@ -1,0 +1,81 @@
+{
+  "format": "todo4vcode-shared-tasks",
+  "version": "1.0.0",
+  "tasks": [
+    {
+      "id": "T-01",
+      "text": "T-01 · Project setup",
+      "description": "Goal: Webpack, ESLint and Prettier with a dev server, CSS and asset handling. Fill the CLAUDE.md placeholders for this project.\nFiles: package.json, package-lock.json, webpack.config.js, eslint.config.mjs, .prettierrc, .prettierignore, .gitignore, src/index.js, src/template.html, CLAUDE.md\nChanged:\npackage.json\npackage-lock.json\nwebpack.config.js\neslint.config.mjs\n.prettierrc\n.prettierignore\nsrc/index.js\nsrc/template.html\nCLAUDE.md\nREADME.md\nproject_brief.md\ndesign_files/UI_screens.png",
+      "tags": [
+        "phase-0"
+      ],
+      "priority": "Must",
+      "status": "Testing",
+      "completed": false,
+      "createdAt": 1794827535244,
+      "order": 1000,
+      "subtasks": [
+        {
+          "id": "T-01-d1",
+          "text": "DoD: npm run dev serves the page",
+          "completed": true
+        },
+        {
+          "id": "T-01-d2",
+          "text": "DoD: npm run lint and npm run format:check pass",
+          "completed": true
+        },
+        {
+          "id": "T-01-d3",
+          "text": "DoD: node_modules and dist are git-ignored",
+          "completed": true
+        },
+        {
+          "id": "T-01-d4",
+          "text": "DoD: npm run build compiles with no errors or warnings",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "T-02",
+      "text": "T-02 · Project plan (plan.md)",
+      "description": "Goal: Read the brief and design, write Overview, Decisions and Open questions, draw the architecture diagrams in Excalidraw for review, then write Architecture, Tasks and Verification.\nFiles: plan.md, .mcp.json, docs/diagrams/module-map.excalidraw, docs/diagrams/module-map.svg, docs/diagrams/data-flow.excalidraw, docs/diagrams/data-flow.svg",
+      "tags": [
+        "phase-0"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794827535244,
+      "order": 2000,
+      "subtasks": [
+        {
+          "id": "T-02-d1",
+          "text": "DoD: Overview, Decisions and Open questions written",
+          "completed": false
+        },
+        {
+          "id": "T-02-d2",
+          "text": "DoD: Excalidraw MCP registered in .mcp.json",
+          "completed": false
+        },
+        {
+          "id": "T-02-d3",
+          "text": "DoD: module-map and data-flow diagrams saved as .excalidraw and .svg and approved by the user",
+          "completed": false
+        },
+        {
+          "id": "T-02-d4",
+          "text": "DoD: Architecture, Tasks and Verification written from the approved diagrams",
+          "completed": false
+        },
+        {
+          "id": "T-02-d5",
+          "text": "DoD: Tasks added to the board",
+          "completed": false
+        }
+      ]
+    }
+  ]
+}
