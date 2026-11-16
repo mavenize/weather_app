@@ -108,8 +108,9 @@ src/
     store.js             getState(), setState(patch), subscribe(fn)
     actions.js           loadLocation(place)
   data/
-    config.js            API base URLs and query params, default place,
-                         debounce delay, localStorage key
+    config.js            locale and unit symbols (T-04), API base URLs and
+                         query params, default place, debounce delay,
+                         localStorage key (T-05)
     copy.js              all UI text, including attribution
     themes.js            icons2 value → theme group
     icons.js             icons2 value → () => import("../assets/icons/<file>.png")

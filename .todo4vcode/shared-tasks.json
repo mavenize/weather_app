@@ -85,8 +85,8 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 3000,
       "subtasks": [
@@ -125,12 +125,12 @@
     {
       "id": "T-04",
       "text": "T-04 · Shared utils",
-      "description": "Goal: createEl, formatting helpers (location timezone) and debounce.\nFiles: src/utils/dom.js, src/utils/format.js, src/utils/debounce.js",
+      "description": "Goal: createEl, formatting helpers (location timezone) and debounce.\nFiles: src/utils/dom.js, src/utils/format.js, src/utils/debounce.js\nChanged:\nsrc/utils/dom.js\nsrc/utils/format.js\nsrc/utils/debounce.js\nsrc/data/config.js\ndocs/diagrams/module-map.excalidraw\ndocs/diagrams/module-map.svg\nplan.md",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 4000,
@@ -138,34 +138,34 @@
         {
           "id": "T-04-d1",
           "text": "DoD: createEl matches CLAUDE.md",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-04-d2",
           "text": "DoD: formatTemp(24) gives 24°, formatWind(19) gives 19 km/h, formatPercent(62) gives 62%",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-04-d3",
           "text": "DoD: formatDate, formatHour and formatDay use the location's timezone, not the device's",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-04-d4",
           "text": "DoD: debounce fires once after the pause",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-04-d5",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
     {
       "id": "T-05",
       "text": "T-05 · Data modules",
-      "description": "Goal: All copy, API config and icon-to-theme mapping in src/data.\nFiles: src/data/config.js, src/data/copy.js, src/data/themes.js",
+      "description": "Goal: All copy, API config and icon-to-theme mapping in src/data.\nStarting point: src/data/config.js already exists from T-04 (locale and unit symbols); extend it.\nFiles: src/data/config.js, src/data/copy.js, src/data/themes.js",
       "tags": [
         "phase-1"
       ],
