@@ -64,7 +64,7 @@ The response is reduced to one small app object by a processing function. The ra
   | `wind`                                                         | Wind face                     |
 
 - **Interface icons:** search, close and the high/low arrows are small inline SVGs drawn for this project.
-- **Font:** the design's typeface is not named. Use a free, self-hosted Google Font that is a close match (see Open questions).
+- **Font:** the design's typeface is not named. **Archivo** (variable, SIL OFL 1.1) was chosen in T-03 as the closest free match after comparing eight Google Fonts against the design. It is set wide: `font-stretch` 112% for text and 125% for the large temperature. It is self-hosted from `@fontsource-variable/archivo@5.3.0` (Latin and Latin Extended files) in `src/assets/fonts/`, with the licence in `OFL.txt`.
 
 ### Attribution
 
@@ -203,18 +203,19 @@ Every task also carries the implicit Definition of Done from CLAUDE.md: `npm run
 
 ### Phase 3: Finish
 
-| ID   | Task                           | Priority | Definition of Done                                                                                                                                        |
-| ---- | ------------------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| T-20 | Accessibility and polish       | Should   | Visible focus styles · the whole flow works by keyboard alone · `prefers-reduced-motion` respected · Lighthouse mobile Accessibility at least 95          |
-| T-21 | Cross-device and network check | Should   | The whole-project checks under Verification pass in Chrome, Safari and Firefox · widths 320, 375, 390 and 430px · Slow 3G and offline behave as described |
-| T-22 | README and GitHub Pages deploy | Must     | README covers what the app is, how to run it, and credits · asset paths work under `/weather_app/` · the live URL loads Berlin and a searched city        |
+| ID   | Task                                                      | Priority | Definition of Done                                                                                                                                        |
+| ---- | --------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| T-20 | Accessibility and polish                                  | Should   | Visible focus styles · the whole flow works by keyboard alone · `prefers-reduced-motion` respected · Lighthouse mobile Accessibility at least 95          |
+| T-21 | Cross-device and network check                            | Should   | The whole-project checks under Verification pass in Chrome, Safari and Firefox · widths 320, 375, 390 and 430px · Slow 3G and offline behave as described |
+| T-23 | Production build without eval source maps (found in T-03) | Should   | `npm run build` output contains no `eval(` and no inline source maps · `npm run dev` keeps fast source maps · done before T-22                            |
+| T-22 | README and GitHub Pages deploy                            | Must     | README covers what the app is, how to run it, and credits · asset paths work under `/weather_app/` · the live URL loads Berlin and a searched city        |
 
 ## Open questions
 
 Build as described in Decisions until the client answers.
 
 1. **Theme colours per weather.** The design shows only one theme. The other palettes (night, cloudy, rain, thunder, snow, fog) will be derived from the design's blue. Confirm, or supply colours.
-2. **Font.** Which typeface does the design use? Default: a close free match from Google Fonts.
+2. **Font.** Which typeface does the design use? Default: Archivo, set wide (see Assets).
 3. **Error and empty states.** The design has no screens for "city not found", "network error" or "no suggestions". Default: a short message in the content area, styled like the forecast rows.
 4. **"Rain" value.** It shows the chance of rain (`precipprob`), not an amount. Confirm.
 5. **7-day temperature.** Each forecast row shows one temperature. Default: the day's high.

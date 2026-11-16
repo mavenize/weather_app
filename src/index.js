@@ -1,3 +1,5 @@
-const content = document.querySelector("#content");
+import "./styles/fonts.css";
+import "./styles/tokens.css";
+import "./styles/base.css";
 
-console.log("Weather app loaded", content);
+// Sections are appended to #content as each one is built (T-11 onwards).

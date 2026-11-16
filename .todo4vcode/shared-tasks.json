@@ -45,8 +45,8 @@
         "phase-0"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794827535244,
       "order": 2000,
       "subtasks": [
@@ -80,12 +80,12 @@
     {
       "id": "T-03",
       "text": "T-03 · Styles and page shell",
-      "description": "Goal: Tokens, self-hosted font, base layout: mobile column centred on desktop with one flat background colour.\nFiles: src/styles/tokens.css, src/styles/fonts.css, src/styles/base.css, src/assets/fonts/, src/index.js",
+      "description": "Goal: Tokens, self-hosted font, base layout: mobile column centred on desktop with one flat background colour.\nFiles: src/styles/tokens.css, src/styles/fonts.css, src/styles/base.css, src/assets/fonts/, src/index.js\nChanged:\nsrc/styles/tokens.css\nsrc/styles/fonts.css\nsrc/styles/base.css\nsrc/assets/fonts/archivo-latin.woff2\nsrc/assets/fonts/archivo-latin-ext.woff2\nsrc/assets/fonts/OFL.txt\nsrc/index.js\nsrc/template.html\npackage.json\nplan.md",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 3000,
@@ -93,32 +93,32 @@
         {
           "id": "T-03-d1",
           "text": "DoD: Tokens hold the design's colours, radii, spacing and type scale",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-03-d2",
           "text": "DoD: Font is self-hosted, with no request to an external host",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-03-d3",
           "text": "DoD: On desktop the column is centred with one flat colour around it",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-03-d4",
           "text": "DoD: No horizontal scroll from 320px to 430px",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-03-d5",
           "text": "DoD: No colours outside tokens.css",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-03-d6",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
@@ -837,6 +837,41 @@
         },
         {
           "id": "T-22-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-23",
+      "text": "T-23 · Production build without eval source maps",
+      "description": "Goal: webpack.config.js sets devtool: eval-source-map for every mode, so the production bundle wraps modules in eval() with inline source maps (found in T-03). Use eval-source-map only in development and no devtool (or a separate source-map file) in production. Do before T-22.\nFiles: webpack.config.js",
+      "tags": [
+        "phase-3"
+      ],
+      "priority": "Should",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794832740387,
+      "order": 23000,
+      "subtasks": [
+        {
+          "id": "T-23-d1",
+          "text": "DoD: npm run build output contains no eval( and no inline source maps",
+          "completed": false
+        },
+        {
+          "id": "T-23-d2",
+          "text": "DoD: npm run dev keeps fast source maps",
+          "completed": false
+        },
+        {
+          "id": "T-23-d3",
+          "text": "DoD: Done before T-22",
+          "completed": false
+        },
+        {
+          "id": "T-23-d4",
           "text": "DoD: npm run check passes",
           "completed": false
         }

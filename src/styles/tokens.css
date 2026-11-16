@@ -1,0 +1,67 @@
+/*
+ * Design tokens. Colours are sampled from design_files/UI_screens.png.
+ * Sizes are the design's pixels divided by 1.39 (its phone screen is
+ * about 542px wide in the image and is treated as a 390px device).
+ * This is the only file that may contain colour values.
+ */
+:root {
+  /* Page and app column */
+  --color-page: #061630;
+  --color-app: #6fa8ed;
+
+  /* Current-conditions card (default theme: clear-day / partly cloudy) */
+  --color-card-start: #386cb1;
+  --color-card-end: #022054;
+  --color-card-control: #1b4985;
+  --color-card-pill: #0d3062;
+  --color-card-panel: #052251;
+  --color-on-card: #ffffff;
+  --color-on-card-muted: #7e9bc6;
+
+  /* Hourly strip */
+  --color-hour: #548ed7;
+  --color-hour-now: #8ab8f3;
+  --color-on-hour: #ffffff;
+
+  /* 7-day sheet */
+  --color-sheet: #ffffff;
+  --color-sheet-row: #f6f8fa;
+  --color-sheet-handle: #cacaca;
+  --color-text: #111111;
+
+  /* Typography */
+  --font-family: "Archivo Variable", system-ui, sans-serif;
+  --font-stretch: 112%;
+  --font-stretch-display: 125%;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-display: 800;
+
+  --font-size-xs: 0.6875rem; /* 11px: hourly time */
+  --font-size-sm: 0.8125rem; /* 13px: stat labels, "Now" */
+  --font-size-md: 0.9375rem; /* 15px: forecast rows */
+  --font-size-lg: 1.0625rem; /* 17px: date, pills, sheet title */
+  --font-size-xl: 1.25rem; /* 20px: condition, stat values */
+  --font-size-2xl: 1.625rem; /* 26px: place name */
+  --font-size-display: 5rem; /* 80px: current temperature */
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Radii */
+  --radius-sm: 1rem; /* pills, hour cards, forecast rows, header buttons */
+  --radius-md: 1.125rem; /* stats panel */
+  --radius-lg: 1.625rem; /* sheet top corners */
+  --radius-xl: 2.5rem; /* card bottom corners */
+  --radius-full: 999px;
+
+  /* Layout */
+  --app-max-width: 430px;
+}
