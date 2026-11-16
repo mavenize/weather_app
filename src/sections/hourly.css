@@ -1,0 +1,50 @@
+/* Sizes from design_files/UI_screens.png, divided by 1.39 (see tokens.css). */
+.hourly {
+  padding: var(--space-6) var(--space-5) 0;
+  color: var(--color-on-hour);
+}
+
+/* Six equal slots across the column. The taller "Now" slot sets the row
+   height and the others sit centred beside it. */
+.hourly__list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hourly__slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 6rem; /* 96px */
+  border-radius: var(--radius-lg);
+  background: var(--color-hour);
+}
+
+.hourly__slot--now {
+  height: 6.75rem; /* 108px */
+  border: 1px solid var(--color-hour-now-border);
+  background: var(--color-hour-now);
+  box-shadow: var(--shadow-hour-now);
+}
+
+.hourly__time {
+  font-size: var(--font-size-xs);
+}
+
+.hourly__temp {
+  font-size: var(--font-size-sm);
+}
+
+.hourly__slot--now .hourly__time {
+  font-size: var(--font-size-sm);
+}
+
+.hourly__slot--now .hourly__temp {
+  font-size: var(--font-size-md);
+}

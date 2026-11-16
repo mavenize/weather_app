@@ -30,6 +30,13 @@
   --color-hour: #548ed7;
   --color-hour-now: #8ab8f3;
   --color-on-hour: #ffffff;
+  --color-hour-now-border: color-mix(
+    in srgb,
+    var(--color-on-hour) 35%,
+    transparent
+  );
+  --shadow-hour-now: 0 0.5rem 1rem
+    color-mix(in srgb, var(--color-hour) 70%, transparent);
 
   /* 7-day sheet */
   --color-sheet: #ffffff;
