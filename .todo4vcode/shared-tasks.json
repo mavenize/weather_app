@@ -815,8 +815,8 @@
         "phase-3"
       ],
       "priority": "Must",
-      "status": "In Progress",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 22000,
       "subtasks": [
@@ -833,7 +833,7 @@
         {
           "id": "T-22-d3",
           "text": "DoD: The live URL loads Berlin and a searched city",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-22-d4",
