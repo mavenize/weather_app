@@ -6,7 +6,8 @@
   flex: 1; /* .app is a flex column: the sheet reaches the bottom */
   margin-top: var(--space-6);
   padding: var(--space-2) var(--space-5) var(--space-6);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) var(--app-corner-inner)
+    var(--app-corner-inner);
   background: var(--color-sheet);
   color: var(--color-text);
 }
@@ -16,7 +17,8 @@
    too short for seven rows. */
 .forecast--expanded {
   position: absolute;
-  inset: var(--forecast-expanded-top) 0 0;
+  inset: calc(var(--forecast-expanded-top) + var(--app-rim)) var(--app-rim)
+    var(--app-rim);
   z-index: 5;
   margin-top: 0;
   overflow-y: auto;

@@ -665,8 +665,8 @@
         "phase-2"
       ],
       "priority": "Should",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 18000,
       "subtasks": [
@@ -872,6 +872,41 @@
         },
         {
           "id": "T-23-d4",
+          "text": "DoD: npm run check passes",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "T-24",
+      "text": "T-24 · Rounded screen corners",
+      "description": "Goal: Round the app's screen edges like the phone screens in the design: a light rim with rounded corners, the card and sheet clipped inside it. Requested by the user after T-18.\nFiles: src/styles/tokens.css, src/styles/base.css, src/sections/forecast.css, src/components/search.css\nChanged:\nsrc/styles/tokens.css\nsrc/styles/base.css\nsrc/sections/forecast.css\nsrc/components/search.css",
+      "tags": [
+        "phase-3"
+      ],
+      "priority": "Should",
+      "status": "Testing",
+      "completed": false,
+      "createdAt": 1794839392567,
+      "order": 24000,
+      "subtasks": [
+        {
+          "id": "T-24-d1",
+          "text": "DoD: On tablet and desktop the column has the design's rim and rounded corners",
+          "completed": true
+        },
+        {
+          "id": "T-24-d2",
+          "text": "DoD: Card, search panel and forecast sheet (both states) follow the rounded corners",
+          "completed": true
+        },
+        {
+          "id": "T-24-d3",
+          "text": "DoD: Phones stay edge to edge with no horizontal scroll from 320 to 430px",
+          "completed": true
+        },
+        {
+          "id": "T-24-d4",
           "text": "DoD: npm run check passes",
           "completed": true
         }

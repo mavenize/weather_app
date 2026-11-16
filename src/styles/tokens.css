@@ -87,4 +87,21 @@
   --app-padding-top: 2.75rem; /* 44px: header and search panel */
   --control-size: 2.875rem; /* 46px: header buttons, search input */
   --icon-size: 1.25rem; /* 20px: interface icons */
+
+  /* Screen frame. On phones the column runs edge to edge, because the
+     device's own screen gives the rounded corners. On wider screens it is
+     drawn like the design's phone: a light rim and rounded corners, with
+     the card and sheet rounded to fit inside the rim. */
+  --app-rim: 0px;
+  --app-corner: 0px;
+  --app-corner-inner: max(0px, calc(var(--app-corner) - var(--app-rim)));
+  --app-frame-gap: 0px; /* space above and below the frame */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --app-rim: 0.5625rem; /* 9px */
+    --app-corner: 2.5rem; /* 40px */
+    --app-frame-gap: var(--space-6);
+  }
 }
