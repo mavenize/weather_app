@@ -275,15 +275,15 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 8000,
       "subtasks": [
         {
           "id": "T-08-d1",
           "text": "DoD: Returns the documented weather shape for a real response and logs it",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-08-d2",
@@ -315,12 +315,12 @@
     {
       "id": "T-09",
       "text": "T-09 · Geocoding API",
-      "description": "Goal: searchCities(query) calls Open-Meteo Geocoding and returns a list of places with labels.\nFiles: src/api/geocoding.js",
+      "description": "Goal: searchCities(query) calls Open-Meteo Geocoding and returns a list of places with labels.\nFiles: src/api/geocoding.js\nChanged:\nsrc/api/geocoding.js",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 9000,
@@ -328,22 +328,22 @@
         {
           "id": "T-09-d1",
           "text": "DoD: searchCities(\"Berl\") returns Berlin, Germany first, labelled \"Berlin, Germany\"",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-09-d2",
           "text": "DoD: Fewer than 2 characters or no match returns []",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-09-d3",
           "text": "DoD: Rejects on network failure",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-09-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
