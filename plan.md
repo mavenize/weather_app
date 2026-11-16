@@ -64,7 +64,7 @@ The response is reduced to one small app object by a processing function. The ra
   | `fog`                                                          | Fog                           |
   | `wind`                                                         | Wind face                     |
 
-- **Interface icons:** search, close and the high/low arrows are small inline SVGs drawn for this project.
+- **Interface icons:** search, close and the high/low arrows are small SVGs drawn for this project, kept in `src/assets/ui/`. Decided in T-12: CSS uses them as masks (`mask-image`) painted with `currentColor`, so their colour comes from the tokens and `createEl` never has to build SVG elements.
 - **Font:** the design's typeface is not named. **Archivo** (variable, SIL OFL 1.1) was chosen in T-03 as the closest free match after comparing eight Google Fonts against the design. It is set wide: `font-stretch` 112% for text and 125% for the large temperature. It is self-hosted from `@fontsource-variable/archivo@5.3.0` (Latin and Latin Extended files) in `src/assets/fonts/`, with the licence in `OFL.txt`.
 
 ### Attribution
@@ -135,6 +135,7 @@ src/
     base.css             reset, page background, centred mobile column
   assets/
     icons/               Fluent Emoji 3D PNGs + LICENSE
+    ui/                  interface icon SVGs, used as CSS masks
     fonts/               .woff2 files
 docs/
   diagrams/              module-map and data-flow (.excalidraw + .svg)

@@ -53,3 +53,15 @@ button {
   overflow-x: clip;
   background: var(--color-app);
 }
+
+/* The dark top card. index.js puts the header and current conditions inside
+   it, so one gradient runs behind both. */
+.card {
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  background: linear-gradient(
+    165deg,
+    var(--color-card-start),
+    var(--color-card-end)
+  );
+  color: var(--color-on-card);
+}

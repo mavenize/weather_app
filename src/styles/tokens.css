@@ -16,6 +16,11 @@
   --color-card-pill: #0d3062;
   --color-card-panel: #052251;
   --color-on-card: #ffffff;
+  --color-on-card-soft: color-mix(
+    in srgb,
+    var(--color-on-card) 88%,
+    transparent
+  ); /* header date */
   --color-on-card-muted: #7e9bc6;
 
   /* Hourly strip */

@@ -1,0 +1,58 @@
+/* Sizes from design_files/UI_screens.png, divided by 1.39 (see tokens.css). */
+.header {
+  --header-button-size: 2.875rem; /* 46px */
+  --header-icon-size: 1.25rem; /* 20px */
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: calc(var(--space-8) + var(--space-3)) var(--space-5) 0 var(--space-8);
+  color: var(--color-on-card);
+}
+
+.header__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.header__place {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* min-height keeps the line's space while the first date loads, so the
+   header doesn't jump when it arrives. */
+.header__date {
+  min-height: 1.3em;
+  font-size: var(--font-size-lg);
+  line-height: 1.3;
+  color: var(--color-on-card-soft);
+}
+
+.header__button {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: var(--header-button-size);
+  height: var(--header-button-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-card-control);
+  color: var(--color-on-card);
+}
+
+/* Interface icons are single-colour SVGs used as masks, so they take the
+   button's text colour from the tokens. */
+.header__icon {
+  width: var(--header-icon-size);
+  height: var(--header-icon-size);
+  background-color: currentColor;
+  mask: center / contain no-repeat;
+}
+
+.header__icon--search {
+  mask-image: url("../assets/ui/search.svg");
+}
