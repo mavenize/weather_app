@@ -42,6 +42,7 @@ export const COPY = {
     loading: "Loading weather…",
     notFound: "We couldn't find that place.",
     network: "Couldn't load the weather. Check your connection and try again.",
+    dismiss: "Dismiss message", // accessible name of the error's close button
   },
 
   attribution: [
