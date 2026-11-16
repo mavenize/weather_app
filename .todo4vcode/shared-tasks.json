@@ -170,8 +170,8 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 5000,
       "subtasks": [
@@ -200,12 +200,12 @@
     {
       "id": "T-06",
       "text": "T-06 · Weather icon assets",
-      "description": "Goal: Copy the Fluent Emoji 3D PNGs we use and map every icons2 value to a dynamic import.\nFiles: src/data/icons.js, src/assets/icons/*.png, src/assets/icons/LICENSE",
+      "description": "Goal: Copy the Fluent Emoji 3D PNGs we use and map every icons2 value to a dynamic import.\nFiles: src/data/icons.js, src/assets/icons/*.png, src/assets/icons/LICENSE\nChanged:\nsrc/data/icons.js\nsrc/assets/icons/LICENSE\nsrc/assets/icons/cloud.png\nsrc/assets/icons/cloud-with-lightning-and-rain.png\nsrc/assets/icons/cloud-with-rain.png\nsrc/assets/icons/cloud-with-snow.png\nsrc/assets/icons/crescent-moon.png\nsrc/assets/icons/fog.png\nsrc/assets/icons/sun.png\nsrc/assets/icons/sun-behind-rain-cloud.png\nsrc/assets/icons/sun-behind-small-cloud.png\nsrc/assets/icons/wind-face.png",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 6000,
@@ -213,22 +213,22 @@
         {
           "id": "T-06-d1",
           "text": "DoD: The 10 Fluent Emoji 3D PNGs from the mapping table and the MIT LICENSE are copied in",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-06-d2",
           "text": "DoD: All 16 icons2 values map to a loader",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-06-d3",
           "text": "DoD: Production build emits only these PNGs",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-06-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
