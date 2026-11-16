@@ -205,8 +205,8 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 6000,
       "subtasks": [
@@ -235,12 +235,12 @@
     {
       "id": "T-07",
       "text": "T-07 · Weather API",
-      "description": "Goal: fetchWeather(lat, lon) calls the Visual Crossing Timeline API and returns the raw JSON (brief step: console.log it).\nFiles: src/api/weather.js",
+      "description": "Goal: fetchWeather(lat, lon) calls the Visual Crossing Timeline API and returns the raw JSON (brief step: console.log it).\nFiles: src/api/weather.js\nChanged:\nsrc/api/weather.js\nsrc/index.js",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 7000,
@@ -253,17 +253,17 @@
         {
           "id": "T-07-d2",
           "text": "DoD: URL is built from config.js",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-07-d3",
           "text": "DoD: Rejects with a clear error on a non-OK response or network failure",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-07-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
