@@ -130,8 +130,8 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 4000,
       "subtasks": [
@@ -165,12 +165,12 @@
     {
       "id": "T-05",
       "text": "T-05 · Data modules",
-      "description": "Goal: All copy, API config and icon-to-theme mapping in src/data.\nStarting point: src/data/config.js already exists from T-04 (locale and unit symbols); extend it.\nFiles: src/data/config.js, src/data/copy.js, src/data/themes.js",
+      "description": "Goal: All copy, API config and icon-to-theme mapping in src/data.\nStarting point: src/data/config.js already exists from T-04 (locale and unit symbols); extend it.\nFiles: src/data/config.js, src/data/copy.js, src/data/themes.js\nChanged:\nsrc/data/config.js\nsrc/data/copy.js\nsrc/data/themes.js\nplan.md",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 5000,
@@ -178,22 +178,22 @@
         {
           "id": "T-05-d1",
           "text": "DoD: Design copy is verbatim in copy.js, plus the new strings (search placeholder, errors, attribution)",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-05-d2",
           "text": "DoD: Every icons2 value maps to a theme group",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-05-d3",
           "text": "DoD: API URLs and default place live only in config.js",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-05-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
@@ -270,7 +270,7 @@
     {
       "id": "T-08",
       "text": "T-08 · Process weather",
-      "description": "Goal: processWeather(json) reduces the response to the app's weather object (brief step: console.log it).\nFiles: src/api/process-weather.js",
+      "description": "Goal: processWeather(json) reduces the response to the app's weather object (brief step: console.log it).\nStarting point: conditions come from CONDITION_LABELS in data/copy.js (plan.md Decisions, Condition text), so process-weather.js imports copy.js too; add that import to the module-map footnote in this task.\nFiles: src/api/process-weather.js",
       "tags": [
         "phase-1"
       ],

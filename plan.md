@@ -29,6 +29,7 @@ Temperatures are always in °C and wind in km/h. The look of the page changes wi
 - **Start-up location.** The last city the user picked is remembered in `localStorage`. On a first visit the app loads Berlin, Germany, as in the design.
 - **Hourly strip.** Six slots: the previous hour, "Now", then the next four hours, as in the design. Data comes from today's and tomorrow's `hours` arrays, in the location's own timezone. Between 00:00 and 00:59 there is no previous hour in the response, so the strip starts at "Now".
 - **7-day list.** It starts with today, matching the design, where "Mon" is the current day. Each row shows the day's high (`tempmax`), icon and condition text.
+- **Condition text.** Decided in T-05. The UI shows a short, title-case label chosen by the `icons2` value (`CONDITION_LABELS` in `src/data/copy.js`), such as "Partly Cloudy" or "Showers". It does not show the API's `conditions` text, which reads like "Rain, Partially cloudy" and doesn't match the design. The design's "Mostly Sunny", "Light Rain" and "Rain Likely" have no matching `icons2` value, so those days show the nearest label.
 
 ### APIs (no keys, called directly from the browser)
 
@@ -157,9 +158,9 @@ docs/
       date: "Monday, June 23",
       theme: "clear-day",
       current: { temp: 24, high: 26, low: 18, icon: "partly-cloudy-day",
-                 conditions: "Partly cloudy", humidity: 62, wind: 19, rain: 24 },
+                 conditions: "Partly Cloudy", humidity: 62, wind: 19, rain: 24 },
       hours: [{ time: "11:00", temp: 20, icon: "cloudy", isNow: false }, …],   // 6
-      days:  [{ day: "Mon", high: 26, icon: "partly-cloudy-day", conditions: "Partly cloudy" }, …], // 7
+      days:  [{ day: "Mon", high: 26, icon: "partly-cloudy-day", conditions: "Partly Cloudy" }, …], // 7
     },
   }
   ```
