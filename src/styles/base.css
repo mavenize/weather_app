@@ -48,6 +48,25 @@ button {
   cursor: pointer;
 }
 
+/* One visible focus ring for keyboard users, on every control. */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* For people who ask for less motion: no spinning, sliding or smooth
+   scrolling anywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* The app is one mobile-width column. On wider screens it is centred and
    the rest of the page shows the flat page colour. It is a flex column so
    the forecast sheet can stretch to the bottom of the screen. The rim and
@@ -78,6 +97,7 @@ button {
     var(--color-card-end)
   );
   color: var(--color-on-card);
+  --color-focus: var(--color-on-card);
 }
 
 /* Hidden on screen, still read by screen readers. */

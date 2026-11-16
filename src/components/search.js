@@ -201,6 +201,18 @@ export function createSearch() {
   toggle.addEventListener("click", open);
   closeButton.addEventListener("click", () => close());
 
+  // Tabbing out of the panel closes it, so it never sits open over the page
+  // while keyboard focus is somewhere else.
+  root.addEventListener("focusout", (event) => {
+    if (
+      !panel.hidden &&
+      event.relatedTarget &&
+      !root.contains(event.relatedTarget)
+    ) {
+      close({ restoreFocus: false });
+    }
+  });
+
   input.addEventListener("input", () => {
     const query = input.value.trim();
     if (query.length < GEOCODING_API.minQueryLength) {

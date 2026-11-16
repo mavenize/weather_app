@@ -700,8 +700,8 @@
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 19000,
       "subtasks": [
@@ -735,12 +735,12 @@
     {
       "id": "T-20",
       "text": "T-20 · Accessibility and polish",
-      "description": "Goal: Focus styles, keyboard flow, reduced motion, Lighthouse accessibility.\nFiles: src/**/*.css, src/**/*.js as needed",
+      "description": "Goal: Focus styles, keyboard flow, reduced motion, Lighthouse accessibility.\nFiles: src/**/*.css, src/**/*.js as needed\nChanged:\nsrc/template.html\nsrc/styles/tokens.css\nsrc/styles/base.css\nsrc/sections/forecast.css\nsrc/components/search.js\nwebpack.config.js",
       "tags": [
         "phase-3"
       ],
       "priority": "Should",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 20000,
@@ -748,27 +748,27 @@
         {
           "id": "T-20-d1",
           "text": "DoD: Visible focus styles",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-20-d2",
           "text": "DoD: The whole flow works by keyboard alone",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-20-d3",
           "text": "DoD: prefers-reduced-motion respected",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-20-d4",
           "text": "DoD: Lighthouse mobile Accessibility at least 95",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-20-d5",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },

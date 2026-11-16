@@ -20,7 +20,13 @@ module.exports = (env, argv) => {
     devServer: {
       watchFiles: ["./src/template.html"],
     },
-    plugins: [new HtmlWebpackPlugin({ template: "./src/template.html" })],
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./src/template.html",
+        // The design's partly-cloudy icon (Fluent Emoji, MIT).
+        favicon: "./src/assets/icons/sun-behind-small-cloud.png",
+      }),
+    ],
     module: {
       rules: [
         { test: /\.css$/i, use: ["style-loader", "css-loader"] },

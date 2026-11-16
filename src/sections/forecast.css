@@ -37,6 +37,7 @@
   width: 100%;
   padding: 0;
   border: 0;
+  border-radius: var(--radius-sm); /* rounds the focus ring */
   background: none;
 }
 
@@ -101,6 +102,9 @@
   font-size: var(--font-size-xs);
 }
 
+/* The padding gives each small link a tap area at least 24px tall. */
 .forecast__credit {
+  display: inline-block;
+  padding-block: var(--space-2);
   color: var(--color-text-muted);
 }
