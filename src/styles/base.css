@@ -48,9 +48,12 @@ button {
 }
 
 /* The app is one mobile-width column. On wider screens it is centred and
-   the rest of the page shows the flat page colour. */
+   the rest of the page shows the flat page colour. It is a flex column so
+   the forecast sheet can stretch to the bottom of the screen. */
 .app {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: var(--app-max-width);
   min-height: 100vh;
@@ -70,4 +73,14 @@ button {
     var(--color-card-end)
   );
   color: var(--color-on-card);
+}
+
+/* Hidden on screen, still read by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

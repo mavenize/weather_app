@@ -1,0 +1,104 @@
+/* Sizes from design_files/UI_screens.png, divided by 1.39 (see tokens.css). */
+.forecast {
+  --forecast-row-gap: calc(var(--space-1) * 1.5); /* 6px */
+  --forecast-expanded-top: 9.75rem; /* 156px: just below the header */
+
+  flex: 1; /* .app is a flex column: the sheet reaches the bottom */
+  margin-top: var(--space-6);
+  padding: var(--space-2) var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--color-sheet);
+  color: var(--color-text);
+}
+
+/* Expanded, the sheet covers the card below the header (second screen).
+   It is positioned against .app (base.css) and scrolls if the screen is
+   too short for seven rows. */
+.forecast--expanded {
+  position: absolute;
+  inset: var(--forecast-expanded-top) 0 0;
+  z-index: 5;
+  margin-top: 0;
+  overflow-y: auto;
+}
+
+.forecast__heading {
+  font-size: inherit;
+}
+
+/* Handle and title together are the toggle button. */
+.forecast__toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.forecast__handle {
+  width: 2.9375rem; /* 47px */
+  height: 0.25rem; /* 4px */
+  border-radius: var(--radius-full);
+  background: var(--color-sheet-handle);
+}
+
+.forecast__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.forecast__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--forecast-row-gap);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Collapsed: today and tomorrow only. */
+.forecast:not(.forecast--expanded) .forecast__row:nth-child(n + 3) {
+  display: none;
+}
+
+/* Columns start where the design's do (19, 93, 163 and 235px at 390px)
+   and scale with the row on narrower screens. */
+.forecast__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.4fr;
+  align-items: center;
+  min-height: 4.25rem; /* 68px */
+  /* 19px left as in the design. The right side is narrower so a label
+     like "Partly Cloudy" stays on one line, as it does in the design. */
+  padding: var(--space-2) var(--space-2) var(--space-2) 1.1875rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-sheet-row);
+  font-size: var(--font-size-md);
+}
+
+/* The second screen's rows are a little taller. */
+.forecast--expanded .forecast__list {
+  gap: var(--space-2);
+}
+
+.forecast--expanded .forecast__row {
+  min-height: 4.75rem; /* 76px */
+}
+
+.forecast__credits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1) var(--space-4);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--font-size-xs);
+}
+
+.forecast__credit {
+  color: var(--color-text-muted);
+}

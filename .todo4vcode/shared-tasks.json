@@ -585,8 +585,8 @@
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 16000,
       "subtasks": [
@@ -598,7 +598,7 @@
         {
           "id": "T-16-d2",
           "text": "DoD: The Now slot is styled as in the design",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-16-d3",
@@ -615,12 +615,12 @@
     {
       "id": "T-17",
       "text": "T-17 · 7-day forecast sheet",
-      "description": "Goal: White bottom sheet with handle and title; collapsed 2 rows, expanded 7; attribution under the list.\nFiles: src/sections/forecast.js, src/sections/forecast.css, src/index.js",
+      "description": "Goal: White bottom sheet with handle and title; collapsed 2 rows, expanded 7; attribution under the list.\nFiles: src/sections/forecast.js, src/sections/forecast.css, src/index.js\nChanged:\nsrc/sections/forecast.js\nsrc/sections/forecast.css\nsrc/index.js\nsrc/styles/base.css",
       "tags": [
         "phase-2"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 17000,
@@ -633,27 +633,27 @@
         {
           "id": "T-17-d2",
           "text": "DoD: Collapsed shows 2 rows, expanded shows 7 starting today",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-17-d3",
           "text": "DoD: The handle or title is a button with aria-expanded",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-17-d4",
           "text": "DoD: No page dots",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-17-d5",
           "text": "DoD: Attribution links shown under the list",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-17-d6",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
