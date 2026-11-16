@@ -320,8 +320,8 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 9000,
       "subtasks": [
@@ -350,12 +350,12 @@
     {
       "id": "T-10",
       "text": "T-10 · State store",
-      "description": "Goal: Small publish/subscribe store with the documented state shape.\nFiles: src/state/store.js",
+      "description": "Goal: Small publish/subscribe store with the documented state shape.\nFiles: src/state/store.js\nChanged:\nsrc/state/store.js",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 10000,
@@ -363,22 +363,22 @@
         {
           "id": "T-10-d1",
           "text": "DoD: setState merges and notifies every subscriber",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-10-d2",
           "text": "DoD: subscribe returns an unsubscribe function that works",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-10-d3",
           "text": "DoD: Initial state matches the documented shape",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-10-d4",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },
