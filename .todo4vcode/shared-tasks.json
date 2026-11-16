@@ -240,15 +240,15 @@
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794829375677,
       "order": 7000,
       "subtasks": [
         {
           "id": "T-07-d1",
           "text": "DoD: fetchWeather(52.52, 13.41) logs the raw JSON in the console",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-07-d2",
@@ -270,12 +270,12 @@
     {
       "id": "T-08",
       "text": "T-08 · Process weather",
-      "description": "Goal: processWeather(json) reduces the response to the app's weather object (brief step: console.log it).\nStarting point: conditions come from CONDITION_LABELS in data/copy.js (plan.md Decisions, Condition text), so process-weather.js imports copy.js too; add that import to the module-map footnote in this task.\nFiles: src/api/process-weather.js",
+      "description": "Goal: processWeather(json) reduces the response to the app's weather object (brief step: console.log it).\nStarting point: conditions come from CONDITION_LABELS in data/copy.js (plan.md Decisions, Condition text), so process-weather.js imports copy.js too; add that import to the module-map footnote in this task.\nFiles: src/api/process-weather.js\nChanged:\nsrc/api/process-weather.js\nsrc/index.js\ndocs/diagrams/module-map.excalidraw\ndocs/diagrams/module-map.svg\ndocs/diagrams/data-flow.excalidraw\ndocs/diagrams/data-flow.svg\nplan.md",
       "tags": [
         "phase-1"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794829375677,
       "order": 8000,
@@ -288,27 +288,27 @@
         {
           "id": "T-08-d2",
           "text": "DoD: 6 hours with isNow on the current hour, crossing midnight correctly",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-08-d3",
           "text": "DoD: 7 days starting today",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-08-d4",
           "text": "DoD: Numbers rounded",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-08-d5",
           "text": "DoD: Theme comes from themes.js",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-08-d6",
           "text": "DoD: npm run check passes",
-          "completed": false
+          "completed": true
         }
       ]
     },

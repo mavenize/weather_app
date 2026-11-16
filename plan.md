@@ -103,7 +103,7 @@ src/
   template.html          <head> plus an empty <div id="content">
   api/
     weather.js           fetchWeather(lat, lon): raw Visual Crossing JSON
-    process-weather.js   processWeather(json): the app's weather object
+    process-weather.js   processWeather(json, place): the app's weather object
     geocoding.js         searchCities(query): list of places
   state/
     store.js             getState(), setState(patch), subscribe(fn)
