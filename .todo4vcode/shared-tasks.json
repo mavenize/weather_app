@@ -10,8 +10,8 @@
         "phase-0"
       ],
       "priority": "Must",
-      "status": "Testing",
-      "completed": false,
+      "status": "Done",
+      "completed": true,
       "createdAt": 1794827535244,
       "order": 1000,
       "subtasks": [
@@ -40,12 +40,12 @@
     {
       "id": "T-02",
       "text": "T-02 · Project plan (plan.md)",
-      "description": "Goal: Read the brief and design, write Overview, Decisions and Open questions, draw the architecture diagrams in Excalidraw for review, then write Architecture, Tasks and Verification.\nFiles: plan.md, .mcp.json, docs/diagrams/module-map.excalidraw, docs/diagrams/module-map.svg, docs/diagrams/data-flow.excalidraw, docs/diagrams/data-flow.svg",
+      "description": "Goal: Read the brief and design, write Overview, Decisions and Open questions, draw the architecture diagrams in Excalidraw for review, then write Architecture, Tasks and Verification. Also install the excalidraw-diagram skill (local, git-ignored) and document the diagram workflow in CLAUDE.md.\nFiles: plan.md, .mcp.json, .gitignore, CLAUDE.md, docs/diagrams/module-map.excalidraw, docs/diagrams/module-map.svg, docs/diagrams/data-flow.excalidraw, docs/diagrams/data-flow.svg\nChanged:\nplan.md\n.mcp.json\n.gitignore\nCLAUDE.md\ndocs/diagrams/module-map.excalidraw\ndocs/diagrams/module-map.svg\ndocs/diagrams/data-flow.excalidraw\ndocs/diagrams/data-flow.svg",
       "tags": [
         "phase-0"
       ],
       "priority": "Must",
-      "status": "Todo",
+      "status": "Testing",
       "completed": false,
       "createdAt": 1794827535244,
       "order": 2000,
@@ -53,26 +53,791 @@
         {
           "id": "T-02-d1",
           "text": "DoD: Overview, Decisions and Open questions written",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-02-d2",
           "text": "DoD: Excalidraw MCP registered in .mcp.json",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-02-d3",
           "text": "DoD: module-map and data-flow diagrams saved as .excalidraw and .svg and approved by the user",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-02-d4",
           "text": "DoD: Architecture, Tasks and Verification written from the approved diagrams",
-          "completed": false
+          "completed": true
         },
         {
           "id": "T-02-d5",
           "text": "DoD: Tasks added to the board",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "T-03",
+      "text": "T-03 · Styles and page shell",
+      "description": "Goal: Tokens, self-hosted font, base layout: mobile column centred on desktop with one flat background colour.\nFiles: src/styles/tokens.css, src/styles/fonts.css, src/styles/base.css, src/assets/fonts/, src/index.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 3000,
+      "subtasks": [
+        {
+          "id": "T-03-d1",
+          "text": "DoD: Tokens hold the design's colours, radii, spacing and type scale",
+          "completed": false
+        },
+        {
+          "id": "T-03-d2",
+          "text": "DoD: Font is self-hosted, with no request to an external host",
+          "completed": false
+        },
+        {
+          "id": "T-03-d3",
+          "text": "DoD: On desktop the column is centred with one flat colour around it",
+          "completed": false
+        },
+        {
+          "id": "T-03-d4",
+          "text": "DoD: No horizontal scroll from 320px to 430px",
+          "completed": false
+        },
+        {
+          "id": "T-03-d5",
+          "text": "DoD: No colours outside tokens.css",
+          "completed": false
+        },
+        {
+          "id": "T-03-d6",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-04",
+      "text": "T-04 · Shared utils",
+      "description": "Goal: createEl, formatting helpers (location timezone) and debounce.\nFiles: src/utils/dom.js, src/utils/format.js, src/utils/debounce.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 4000,
+      "subtasks": [
+        {
+          "id": "T-04-d1",
+          "text": "DoD: createEl matches CLAUDE.md",
+          "completed": false
+        },
+        {
+          "id": "T-04-d2",
+          "text": "DoD: formatTemp(24) gives 24°, formatWind(19) gives 19 km/h, formatPercent(62) gives 62%",
+          "completed": false
+        },
+        {
+          "id": "T-04-d3",
+          "text": "DoD: formatDate, formatHour and formatDay use the location's timezone, not the device's",
+          "completed": false
+        },
+        {
+          "id": "T-04-d4",
+          "text": "DoD: debounce fires once after the pause",
+          "completed": false
+        },
+        {
+          "id": "T-04-d5",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-05",
+      "text": "T-05 · Data modules",
+      "description": "Goal: All copy, API config and icon-to-theme mapping in src/data.\nFiles: src/data/config.js, src/data/copy.js, src/data/themes.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 5000,
+      "subtasks": [
+        {
+          "id": "T-05-d1",
+          "text": "DoD: Design copy is verbatim in copy.js, plus the new strings (search placeholder, errors, attribution)",
+          "completed": false
+        },
+        {
+          "id": "T-05-d2",
+          "text": "DoD: Every icons2 value maps to a theme group",
+          "completed": false
+        },
+        {
+          "id": "T-05-d3",
+          "text": "DoD: API URLs and default place live only in config.js",
+          "completed": false
+        },
+        {
+          "id": "T-05-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-06",
+      "text": "T-06 · Weather icon assets",
+      "description": "Goal: Copy the Fluent Emoji 3D PNGs we use and map every icons2 value to a dynamic import.\nFiles: src/data/icons.js, src/assets/icons/*.png, src/assets/icons/LICENSE",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 6000,
+      "subtasks": [
+        {
+          "id": "T-06-d1",
+          "text": "DoD: The 10 Fluent Emoji 3D PNGs from the mapping table and the MIT LICENSE are copied in",
+          "completed": false
+        },
+        {
+          "id": "T-06-d2",
+          "text": "DoD: All 16 icons2 values map to a loader",
+          "completed": false
+        },
+        {
+          "id": "T-06-d3",
+          "text": "DoD: Production build emits only these PNGs",
+          "completed": false
+        },
+        {
+          "id": "T-06-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-07",
+      "text": "T-07 · Weather API",
+      "description": "Goal: fetchWeather(lat, lon) calls the Visual Crossing Timeline API and returns the raw JSON (brief step: console.log it).\nFiles: src/api/weather.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 7000,
+      "subtasks": [
+        {
+          "id": "T-07-d1",
+          "text": "DoD: fetchWeather(52.52, 13.41) logs the raw JSON in the console",
+          "completed": false
+        },
+        {
+          "id": "T-07-d2",
+          "text": "DoD: URL is built from config.js",
+          "completed": false
+        },
+        {
+          "id": "T-07-d3",
+          "text": "DoD: Rejects with a clear error on a non-OK response or network failure",
+          "completed": false
+        },
+        {
+          "id": "T-07-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-08",
+      "text": "T-08 · Process weather",
+      "description": "Goal: processWeather(json) reduces the response to the app's weather object (brief step: console.log it).\nFiles: src/api/process-weather.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 8000,
+      "subtasks": [
+        {
+          "id": "T-08-d1",
+          "text": "DoD: Returns the documented weather shape for a real response and logs it",
+          "completed": false
+        },
+        {
+          "id": "T-08-d2",
+          "text": "DoD: 6 hours with isNow on the current hour, crossing midnight correctly",
+          "completed": false
+        },
+        {
+          "id": "T-08-d3",
+          "text": "DoD: 7 days starting today",
+          "completed": false
+        },
+        {
+          "id": "T-08-d4",
+          "text": "DoD: Numbers rounded",
+          "completed": false
+        },
+        {
+          "id": "T-08-d5",
+          "text": "DoD: Theme comes from themes.js",
+          "completed": false
+        },
+        {
+          "id": "T-08-d6",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-09",
+      "text": "T-09 · Geocoding API",
+      "description": "Goal: searchCities(query) calls Open-Meteo Geocoding and returns a list of places with labels.\nFiles: src/api/geocoding.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 9000,
+      "subtasks": [
+        {
+          "id": "T-09-d1",
+          "text": "DoD: searchCities(\"Berl\") returns Berlin, Germany first, labelled \"Berlin, Germany\"",
+          "completed": false
+        },
+        {
+          "id": "T-09-d2",
+          "text": "DoD: Fewer than 2 characters or no match returns []",
+          "completed": false
+        },
+        {
+          "id": "T-09-d3",
+          "text": "DoD: Rejects on network failure",
+          "completed": false
+        },
+        {
+          "id": "T-09-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-10",
+      "text": "T-10 · State store",
+      "description": "Goal: Small publish/subscribe store with the documented state shape.\nFiles: src/state/store.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 10000,
+      "subtasks": [
+        {
+          "id": "T-10-d1",
+          "text": "DoD: setState merges and notifies every subscriber",
+          "completed": false
+        },
+        {
+          "id": "T-10-d2",
+          "text": "DoD: subscribe returns an unsubscribe function that works",
+          "completed": false
+        },
+        {
+          "id": "T-10-d3",
+          "text": "DoD: Initial state matches the documented shape",
+          "completed": false
+        },
+        {
+          "id": "T-10-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-11",
+      "text": "T-11 · Actions and start-up",
+      "description": "Goal: loadLocation(place) drives loading, fetch, process, ready or error, and saves the last place. index.js loads the saved place or Berlin on start.\nFiles: src/state/actions.js, src/index.js",
+      "tags": [
+        "phase-1"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 11000,
+      "subtasks": [
+        {
+          "id": "T-11-d1",
+          "text": "DoD: Page load logs a ready state with Berlin weather",
+          "completed": false
+        },
+        {
+          "id": "T-11-d2",
+          "text": "DoD: Status goes loading to ready, or loading to error with the previous weather kept",
+          "completed": false
+        },
+        {
+          "id": "T-11-d3",
+          "text": "DoD: Last place saved and restored after reload",
+          "completed": false
+        },
+        {
+          "id": "T-11-d4",
+          "text": "DoD: Only the newest of two overlapping loads is applied",
+          "completed": false
+        },
+        {
+          "id": "T-11-d5",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-12",
+      "text": "T-12 · Header section",
+      "description": "Goal: Place name, local date and one search button in place of the bell and hamburger.\nFiles: src/sections/header.js, src/sections/header.css, src/index.js",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 12000,
+      "subtasks": [
+        {
+          "id": "T-12-d1",
+          "text": "DoD: Matches the design header, with one search button",
+          "completed": false
+        },
+        {
+          "id": "T-12-d2",
+          "text": "DoD: Place and local date come from state",
+          "completed": false
+        },
+        {
+          "id": "T-12-d3",
+          "text": "DoD: The search button has an accessible name",
+          "completed": false
+        },
+        {
+          "id": "T-12-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-13",
+      "text": "T-13 · Search component",
+      "description": "Goal: Search bar opened from the header with debounced city suggestions; clicking one loads it.\nFiles: src/components/search.js, src/components/search.css",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 13000,
+      "subtasks": [
+        {
+          "id": "T-13-d1",
+          "text": "DoD: Header button opens the search bar",
+          "completed": false
+        },
+        {
+          "id": "T-13-d2",
+          "text": "DoD: Typing Berl shows suggestions, with one request per pause in typing",
+          "completed": false
+        },
+        {
+          "id": "T-13-d3",
+          "text": "DoD: Clicking a suggestion loads it and closes the bar",
+          "completed": false
+        },
+        {
+          "id": "T-13-d4",
+          "text": "DoD: Enter picks the first suggestion, Escape closes and returns focus",
+          "completed": false
+        },
+        {
+          "id": "T-13-d5",
+          "text": "DoD: No results message shows",
+          "completed": false
+        },
+        {
+          "id": "T-13-d6",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-14",
+      "text": "T-14 · Weather icon component",
+      "description": "Goal: createWeatherIcon(icon, options) renders the mapped Fluent PNG with reserved space.\nFiles: src/components/weather-icon.js, src/components/weather-icon.css",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 14000,
+      "subtasks": [
+        {
+          "id": "T-14-d1",
+          "text": "DoD: All 16 icons2 values render the mapped PNG",
+          "completed": false
+        },
+        {
+          "id": "T-14-d2",
+          "text": "DoD: An unknown value falls back to Cloud",
+          "completed": false
+        },
+        {
+          "id": "T-14-d3",
+          "text": "DoD: Space is reserved, so nothing jumps while the PNG loads",
+          "completed": false
+        },
+        {
+          "id": "T-14-d4",
+          "text": "DoD: Decorative icons are hidden from screen readers",
+          "completed": false
+        },
+        {
+          "id": "T-14-d5",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-15",
+      "text": "T-15 · Current conditions section",
+      "description": "Goal: Top card: icon, temperature, condition, High/Low pills and Humidity/Wind/Rain panel.\nFiles: src/sections/current.js, src/sections/current.css, src/index.js",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 15000,
+      "subtasks": [
+        {
+          "id": "T-15-d1",
+          "text": "DoD: Matches the design's top card",
+          "completed": false
+        },
+        {
+          "id": "T-15-d2",
+          "text": "DoD: Values in °C, km/h and % from state",
+          "completed": false
+        },
+        {
+          "id": "T-15-d3",
+          "text": "DoD: Copy is verbatim",
+          "completed": false
+        },
+        {
+          "id": "T-15-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-16",
+      "text": "T-16 · Hourly strip",
+      "description": "Goal: Six hourly slots around the current hour with Now highlighted.\nFiles: src/sections/hourly.js, src/sections/hourly.css, src/index.js",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 16000,
+      "subtasks": [
+        {
+          "id": "T-16-d1",
+          "text": "DoD: Six slots: previous hour, Now and the next four, in the location's time",
+          "completed": false
+        },
+        {
+          "id": "T-16-d2",
+          "text": "DoD: The Now slot is styled as in the design",
+          "completed": false
+        },
+        {
+          "id": "T-16-d3",
+          "text": "DoD: Correct after 20:00, when the strip crosses midnight",
+          "completed": false
+        },
+        {
+          "id": "T-16-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-17",
+      "text": "T-17 · 7-day forecast sheet",
+      "description": "Goal: White bottom sheet with handle and title; collapsed 2 rows, expanded 7; attribution under the list.\nFiles: src/sections/forecast.js, src/sections/forecast.css, src/index.js",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 17000,
+      "subtasks": [
+        {
+          "id": "T-17-d1",
+          "text": "DoD: Matches both design screens",
+          "completed": false
+        },
+        {
+          "id": "T-17-d2",
+          "text": "DoD: Collapsed shows 2 rows, expanded shows 7 starting today",
+          "completed": false
+        },
+        {
+          "id": "T-17-d3",
+          "text": "DoD: The handle or title is a button with aria-expanded",
+          "completed": false
+        },
+        {
+          "id": "T-17-d4",
+          "text": "DoD: No page dots",
+          "completed": false
+        },
+        {
+          "id": "T-17-d5",
+          "text": "DoD: Attribution links shown under the list",
+          "completed": false
+        },
+        {
+          "id": "T-17-d6",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-18",
+      "text": "T-18 · Status section",
+      "description": "Goal: Loading indicator and error messages.\nFiles: src/sections/status.js, src/sections/status.css, src/index.js",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Should",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 18000,
+      "subtasks": [
+        {
+          "id": "T-18-d1",
+          "text": "DoD: Loader shows from city pick until data arrives (DevTools Slow 3G)",
+          "completed": false
+        },
+        {
+          "id": "T-18-d2",
+          "text": "DoD: Not found and network errors show their messages",
+          "completed": false
+        },
+        {
+          "id": "T-18-d3",
+          "text": "DoD: Status changes are announced through aria-live",
+          "completed": false
+        },
+        {
+          "id": "T-18-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-19",
+      "text": "T-19 · Weather themes",
+      "description": "Goal: data-theme follows the current conditions; token palettes for each theme group.\nFiles: src/index.js, src/styles/tokens.css",
+      "tags": [
+        "phase-2"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 19000,
+      "subtasks": [
+        {
+          "id": "T-19-d1",
+          "text": "DoD: data-theme follows the current conditions",
+          "completed": false
+        },
+        {
+          "id": "T-19-d2",
+          "text": "DoD: Palettes for clear-day, clear-night, cloudy, rain, thunder, snow and fog",
+          "completed": false
+        },
+        {
+          "id": "T-19-d3",
+          "text": "DoD: Text contrast at least 4.5:1 in every theme",
+          "completed": false
+        },
+        {
+          "id": "T-19-d4",
+          "text": "DoD: Colours only in tokens.css",
+          "completed": false
+        },
+        {
+          "id": "T-19-d5",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-20",
+      "text": "T-20 · Accessibility and polish",
+      "description": "Goal: Focus styles, keyboard flow, reduced motion, Lighthouse accessibility.\nFiles: src/**/*.css, src/**/*.js as needed",
+      "tags": [
+        "phase-3"
+      ],
+      "priority": "Should",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 20000,
+      "subtasks": [
+        {
+          "id": "T-20-d1",
+          "text": "DoD: Visible focus styles",
+          "completed": false
+        },
+        {
+          "id": "T-20-d2",
+          "text": "DoD: The whole flow works by keyboard alone",
+          "completed": false
+        },
+        {
+          "id": "T-20-d3",
+          "text": "DoD: prefers-reduced-motion respected",
+          "completed": false
+        },
+        {
+          "id": "T-20-d4",
+          "text": "DoD: Lighthouse mobile Accessibility at least 95",
+          "completed": false
+        },
+        {
+          "id": "T-20-d5",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-21",
+      "text": "T-21 · Cross-device and network check",
+      "description": "Goal: Run the whole-project checks from plan.md Verification across browsers, widths and network conditions.\nFiles: plan.md (results), fixes as new tasks",
+      "tags": [
+        "phase-3"
+      ],
+      "priority": "Should",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 21000,
+      "subtasks": [
+        {
+          "id": "T-21-d1",
+          "text": "DoD: Whole-project checks pass in Chrome, Safari and Firefox",
+          "completed": false
+        },
+        {
+          "id": "T-21-d2",
+          "text": "DoD: Widths 320, 375, 390 and 430px",
+          "completed": false
+        },
+        {
+          "id": "T-21-d3",
+          "text": "DoD: Slow 3G and offline behave as described",
+          "completed": false
+        },
+        {
+          "id": "T-21-d4",
+          "text": "DoD: npm run check passes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "T-22",
+      "text": "T-22 · README and GitHub Pages deploy",
+      "description": "Goal: README with credits; asset paths that work under /weather_app/; deploy to gh-pages.\nFiles: README.md, webpack.config.js",
+      "tags": [
+        "phase-3"
+      ],
+      "priority": "Must",
+      "status": "Todo",
+      "completed": false,
+      "createdAt": 1794829375677,
+      "order": 22000,
+      "subtasks": [
+        {
+          "id": "T-22-d1",
+          "text": "DoD: README covers what the app is, how to run it, and credits",
+          "completed": false
+        },
+        {
+          "id": "T-22-d2",
+          "text": "DoD: Asset paths work under /weather_app/",
+          "completed": false
+        },
+        {
+          "id": "T-22-d3",
+          "text": "DoD: The live URL loads Berlin and a searched city",
+          "completed": false
+        },
+        {
+          "id": "T-22-d4",
+          "text": "DoD: npm run check passes",
           "completed": false
         }
       ]

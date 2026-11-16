@@ -13,7 +13,7 @@ A mobile-layout weather forecast site where anyone can search for a city and see
 - `npm run lint`: ESLint on the whole project
 - `npm run format`: Prettier rewrites every file
 - `npm run check`: lint, format check and build in one go. This must pass before any task moves to `Testing`.
-- `npx -y mcp-excalidraw-server start`: Excalidraw canvas at http://127.0.0.1:3000 for architecture diagrams (see [Architecture diagrams](#architecture-diagrams-excalidraw))
+- `npx -y mcp-excalidraw-server start`: Excalidraw canvas at http://127.0.0.1:3000 for reviewing architecture diagrams (see [Architecture diagrams](#architecture-diagrams-excalidraw))
 
 ## Project setup (task T-01)
 
@@ -188,35 +188,33 @@ Every task carries these implicit DoD items: `npm run check` passes with no erro
 
 ## Architecture diagrams (Excalidraw)
 
-Architecture is drawn before it is written down. Diagrams are drawn during planning (T-02) with the Excalidraw MCP server [`mcp-excalidraw-server`](https://github.com/yctimlin/mcp_excalidraw). It gives Claude a live canvas plus tools that save `.excalidraw` and `.svg` files into the repo. It needs Node 20+.
+Architecture is drawn before it is written down. Diagrams are drawn during planning (T-02) with two tools:
+
+- The **[excalidraw-diagram skill](https://github.com/coleam00/excalidraw-diagram-skill)** (`.claude/skills/excalidraw-diagram/`) sets how diagrams are designed: diagrams that argue rather than display, real names and evidence, a fixed colour palette, and a mandatory render, view and fix loop. Claude follows its `SKILL.md` for every diagram and writes the `.excalidraw` JSON by hand, one section per edit.
+- The **[`mcp-excalidraw-server`](https://github.com/yctimlin/mcp_excalidraw)** package (Node 20+) renders `.excalidraw` files to PNG and SVG and runs the live canvas. Claude drives it from the terminal with `npx -y mcp-excalidraw-server <command>`. It is also registered as an MCP server in `.mcp.json`, but the CLI does the same work and needs no restart.
 
 The official Excalidraw MCP (`https://mcp.excalidraw.com`) is not used. It is a chat widget for apps that render MCP Apps, and its README documents no way to save files to the project.
 
 ### Setup (once per project, part of T-02)
 
-1. Register the server at project scope so it is stored in `.mcp.json` and shared through git:
+1. Install the skill at project level. It has no licence file, so it stays out of git (`.claude/skills/excalidraw-diagram/` is in `.gitignore`):
+   ```sh
+   git clone --depth 1 https://github.com/coleam00/excalidraw-diagram-skill.git /tmp/excalidraw-diagram-skill
+   mkdir -p .claude/skills/excalidraw-diagram
+   rsync -a --exclude .git /tmp/excalidraw-diagram-skill/ .claude/skills/excalidraw-diagram/
+   ```
+   The skill's own Python renderer (`uv`, Python 3.11+, Playwright Chromium) is not set up. Its render step uses `mcp-excalidraw-server render` instead (see below), which needs nothing beyond Node.
+2. Register the canvas server at project scope so it is stored in `.mcp.json` and shared through git:
    ```sh
    claude mcp add excalidraw --scope project -- npx -y mcp-excalidraw-server
    ```
-   This writes:
-   ```json
-   {
-     "mcpServers": {
-       "excalidraw": {
-         "command": "npx",
-         "args": ["-y", "mcp-excalidraw-server"]
-       }
-     }
-   }
-   ```
-2. Restart Claude Code and approve the project server when prompted. Confirm with `claude mcp list` or `/mcp`.
+   The MCP tools appear after a Claude Code restart. Nothing in the workflow below depends on them.
 3. Create `docs/diagrams/` and add it to `.prettierignore` (already shown in T-01).
-4. Optional: watch the drawing live. The first drawing call starts the canvas automatically. To start it by hand, run `npx -y mcp-excalidraw-server start` and open http://127.0.0.1:3000. The tab must be open for `create_from_mermaid`, because its layout runs in the browser.
+4. Optional: watch or review on the live canvas. Run `npx -y mcp-excalidraw-server start` and open http://127.0.0.1:3000.
 5. Optional: to edit diagrams by hand, install the VS Code extension **Excalidraw** (`pomdtr.excalidraw-editor`). It opens `.excalidraw` files in an editor tab. Opening them at excalidraw.com also works.
 
 Notes:
 
-- The MCP file tools only read and write inside `EXCALIDRAW_EXPORT_DIR`, which defaults to the working directory (the project root). Keep diagram paths under `docs/diagrams/`.
 - The canvas has no authentication. Keep it on the default `127.0.0.1`, and never start it with `HOST=0.0.0.0`.
 - To remove the server: `claude mcp remove excalidraw --scope project`.
 
@@ -232,16 +230,25 @@ Every diagram is saved twice: `docs/diagrams/<name>.excalidraw` is the editable 
 
 ### How Claude draws
 
-1. Call `read_diagram_guide` once per session before drawing.
-2. Build the scene with `batch_create_elements`, or with `create_from_mermaid` for a quick first layout. Tidy it with `align_elements` and `distribute_elements`.
-3. Check the result with `describe_scene` or `get_canvas_screenshot` before showing the user.
-4. Save it with `export_scene` to `docs/diagrams/<name>.excalidraw` and `export_to_image` to `docs/diagrams/<name>.svg`.
-5. To revise later, `import_scene` the `.excalidraw` file, edit it, then export both files again. Never hand-edit the SVG.
+1. Read `.claude/skills/excalidraw-diagram/SKILL.md` and `references/color-palette.md` once per session before drawing.
+2. Plan the diagram with the skill's design process (depth, concepts, patterns, eye flow), then write `docs/diagrams/<name>.excalidraw` by hand, one section per edit, using the templates in `references/element-templates.md`.
+3. Run the skill's render and validate loop. Render with `npx -y mcp-excalidraw-server render docs/diagrams/<name>.excalidraw --out <scratchpad>/<name>.png`, view the PNG, fix the JSON and repeat until the skill's quality checklist passes. Keep PNGs out of the repo.
+4. Export the SVG with `npx -y mcp-excalidraw-server render docs/diagrams/<name>.excalidraw --format svg --out docs/diagrams/<name>.svg`.
+5. For review on the canvas, load it with `npx -y mcp-excalidraw-server import docs/diagrams/<name>.excalidraw --replace`. If the user edits it there, save it back with `export --out docs/diagrams/<name>.excalidraw`, then export the SVG again.
+6. To revise later, edit the `.excalidraw` file, re-render and export the SVG again. Never hand-edit the SVG.
 
-Diagram conventions:
+Diagram conventions (these win where the skill's general advice differs):
 
 - Labels match real names: file names, `createX()` functions and API endpoints.
-- One colour per layer: sections, components, data/utils, external services. Include a small legend.
+- One colour per layer, taken from the skill's palette, with a small legend:
+  | Layer                       | Palette entry | Fill / stroke         |
+  | --------------------------- | ------------- | --------------------- |
+  | Entry point (`index.js`)    | Start/Trigger | `#fed7aa` / `#c2410c` |
+  | Sections                    | Tertiary      | `#93c5fd` / `#1e3a5f` |
+  | Components                  | AI/LLM        | `#ddd6fe` / `#6d28d9` |
+  | State and API modules       | Decision      | `#fef3c7` / `#b45309` |
+  | Data, utils, styles, assets | End/Success   | `#a7f3d0` / `#047857` |
+  | External services           | Warning       | `#fee2e2` / `#dc2626` |
 - Arrows point from importer to imported, or from data source to consumer. Label any arrow whose meaning is not obvious.
 
 The diagrams are part of the architecture. If a task changes how modules connect, update the affected diagram in the same task and commit.

@@ -147,3 +147,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Excalidraw diagram skill (third-party, no licence, installed locally; see CLAUDE.md)
+.claude/skills/excalidraw-diagram/
