@@ -61,6 +61,15 @@ export function processWeather(json, place, { now = Date.now() } = {}) {
   if (!current || !Array.isArray(days) || days.length === 0) {
     throw new Error("Weather response is missing current conditions or days");
   }
+  // Hours and day names are formatted from datetimeEpoch. Without it the
+  // formatters throw a bare RangeError, so name the real problem instead.
+  const firstHour = days[0].hours?.[0];
+  if (
+    !Number.isFinite(days[0].datetimeEpoch) ||
+    !Number.isFinite(firstHour?.datetimeEpoch)
+  ) {
+    throw new Error("Weather response is missing datetimeEpoch");
+  }
 
   const timeZone = json.timezone;
   const nowSeconds = Math.floor(now / 1000);

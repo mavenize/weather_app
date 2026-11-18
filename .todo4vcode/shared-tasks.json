@@ -911,6 +911,46 @@
           "completed": true
         }
       ]
+    },
+    {
+      "id": "T-25",
+      "text": "T-25 · Fix missing datetimeEpoch in weather response",
+      "description": "Goal: Visual Crossing's anonymous response stopped sending datetimeEpoch (found 2026-11-18), so processWeather threw and every city showed the network error. Request the fields the app reads by name and fail with a clear message if datetimeEpoch is missing.\nFiles: src/data/config.js, src/api/process-weather.js, plan.md, docs/diagrams/data-flow.excalidraw, docs/diagrams/data-flow.svg\nChanged:\nsrc/data/config.js\nsrc/api/process-weather.js\nplan.md\ndocs/diagrams/data-flow.excalidraw\ndocs/diagrams/data-flow.svg",
+      "tags": [
+        "phase-3"
+      ],
+      "priority": "Must",
+      "status": "Testing",
+      "completed": false,
+      "createdAt": 1795009689728,
+      "order": 25000,
+      "subtasks": [
+        {
+          "id": "T-25-d1",
+          "text": "DoD: The weather loads for Berlin and London",
+          "completed": true
+        },
+        {
+          "id": "T-25-d2",
+          "text": "DoD: The weather request URL includes elements",
+          "completed": true
+        },
+        {
+          "id": "T-25-d3",
+          "text": "DoD: A response without datetimeEpoch logs a clear error",
+          "completed": true
+        },
+        {
+          "id": "T-25-d4",
+          "text": "DoD: plan.md and the data-flow diagram show the new URL",
+          "completed": true
+        },
+        {
+          "id": "T-25-d5",
+          "text": "DoD: npm run check passes with no errors or warnings",
+          "completed": true
+        }
+      ]
     }
   ]
 }

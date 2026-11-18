@@ -12,6 +12,9 @@ export const UNITS = {
 // Visual Crossing Timeline API. No key: anonymous requests are allowed when
 // the response is gzip-compressed, which browsers handle automatically.
 // Request: `${baseUrl}/${lat},${lon}/${range}?${params}`.
+// `elements` names every field api/process-weather.js reads. Since 2026-11-18
+// the default anonymous response leaves out datetimeEpoch, so the fields are
+// asked for by name rather than relying on the default set.
 export const WEATHER_API = {
   baseUrl:
     "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline",
@@ -19,6 +22,8 @@ export const WEATHER_API = {
   params: {
     unitGroup: "metric",
     include: "current,hours,days",
+    elements:
+      "datetime,datetimeEpoch,temp,tempmax,tempmin,humidity,windspeed,precipprob,conditions,icon",
     iconSet: "icons2",
     contentType: "json",
   },
